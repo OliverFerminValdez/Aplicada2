@@ -1,0 +1,38 @@
+﻿@page "/component"
+
+<h3>Componente calculador</h3>
+
+
+<label><strong>Primer numero:  </strong></label>
+<input id="primerNumero" type="text" @bind="primerNumero"/>
+<br />
+<label><strong>Segundo numero: </strong></label>
+<input id="segundoNumero" type="text" @bind="segundoNumero" width="100"/>
+<br />
+<br />  
+<button id="CalcularButton" class="btn btn-primary" @onclick="calcular">Calcular</button>
+<br />
+<br />
+
+<label><strong>La suma es:</strong>@totalSuma </label>
+<br />
+<label><strong>La resta es:</strong>@totalResta </label>
+<br />
+<label><strong>La Multiplicacion es:</strong>@totalMultiplicacion </label>
+
+@code {
+
+    private float primerNumero;
+    private float segundoNumero;
+    private float totalResta;
+    private float totalSuma;
+    private float totalMultiplicacion;
+
+    private void calcular()
+    {
+        totalSuma = primerNumero + segundoNumero;
+        totalResta = primerNumero - segundoNumero;
+        totalMultiplicacion = primerNumero * segundoNumero;
+    }
+
+}
